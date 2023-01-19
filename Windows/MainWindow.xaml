@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PenStore"
         xmlns:vm="clr-namespace:PenStore.ViewsModel"
-        mc:Ignorable="d" MinHeight="450" MinWidth="800"
+        mc:Ignorable="d" MinHeight="450" MinWidth="800" WindowStyle="None"
         Title="MainWindow" Height="500" Width="900">
     <Window.DataContext>
         <vm:MainViewPages/>
