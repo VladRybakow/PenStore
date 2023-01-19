@@ -22,7 +22,7 @@ namespace PenStore.Windows
         {
             InitializeComponent();
 
-            CBType.ItemsSource = DB.Client.ToList();
+            CBType.ItemsSource = DB.Types.ToList();
         }
 
         private void RegBtn(object sender, RoutedEventArgs e)

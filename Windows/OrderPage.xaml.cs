@@ -37,7 +37,7 @@ namespace PenStore.Windows
                 return;
             }
 
-            MessageBoxResult result = MessageBox.Show("Вы действительно хотите удалить этого клиента?", "Удалить?", MessageBoxButton.YesNo);
+            MessageBoxResult result = MessageBox.Show("Вы действительно хотите удалить этот заказ?", "Удалить", MessageBoxButton.YesNo);
 
             if (result == MessageBoxResult.Yes)
             {

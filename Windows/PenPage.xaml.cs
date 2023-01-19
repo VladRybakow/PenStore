@@ -38,7 +38,7 @@ namespace PenStore.Windows
                 return;
             }
 
-            MessageBoxResult result = MessageBox.Show("Вы действительно хотите удалить эту ручку?", "Удаление?", MessageBoxButton.YesNo);
+            MessageBoxResult result = MessageBox.Show("Вы действительно хотите удалить эту ручку?", "Удаление", MessageBoxButton.YesNo);
 
             if (result == MessageBoxResult.Yes)
             {
