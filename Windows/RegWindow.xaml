@@ -1,0 +1,74 @@
+﻿<Window x:Class="PenStore.Windows.RegWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PenStore.Windows"
+        mc:Ignorable="d"
+        Title="RegWindow" Height="500" Width="300">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" 
+               HorizontalAlignment="Center"  VerticalAlignment="Center" 
+               Content="Имя" FontSize="20" FontFamily="Verdana" FontWeight="Bold"/>
+
+        <TextBox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="6" TextWrapping="Wrap" Name="TBN"
+                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="14"/>
+
+        <Label Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="6" 
+               HorizontalAlignment="Center"  VerticalAlignment="Center" 
+               Content="Логин" FontSize="20" FontFamily="Verdana" FontWeight="Bold"/>
+
+        <TextBox Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="6" Name="TBL" TextWrapping="Wrap"
+                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="14"/>
+
+        <Label Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="6" 
+               HorizontalAlignment="Center"  VerticalAlignment="Center" 
+               Content="Пароль" FontSize="20" FontFamily="Verdana" FontWeight="Bold"/>
+
+        <TextBox Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="6" Name="TBP" TextWrapping="Wrap"
+                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="14"/>
+
+        <Label Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="6" 
+               HorizontalAlignment="Center"  VerticalAlignment="Center" 
+               Content="Тип клиента" FontSize="20" FontFamily="Verdana" FontWeight="Bold"/>
+
+        <ComboBox Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="6" Name="CBType">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock x:Name="TBTypeClient" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Verdana" FontWeight="Bold" Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <Button Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="6" Margin="5"
+                Click="RegBtn" Content="Регистрация" FontSize="16"
+                FontFamily="Verdana" FontWeight="Bold"/>
+
+    </Grid>
+</Window>
