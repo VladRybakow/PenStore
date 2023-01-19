@@ -68,5 +68,9 @@ namespace PenStore.Windows
                 }
             }
         }
+        private void ExitBTN(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

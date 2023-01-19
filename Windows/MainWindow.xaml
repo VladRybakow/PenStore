@@ -71,5 +71,9 @@
 
         </StackPanel>
 
+        <Button Grid.Column="9" Margin="25,5,25,5"
+                Content="Х" FontSize="14" Click="ExitBTN"
+                FontFamily="Verdana" FontWeight="Bold"/>
+
     </Grid>
 </Window>

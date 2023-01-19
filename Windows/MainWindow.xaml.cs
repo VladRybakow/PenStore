@@ -30,5 +30,9 @@ namespace PenStore
         {
             SPR.Visibility = Visibility.Hidden;
         }
+        private void ExitBTN(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
