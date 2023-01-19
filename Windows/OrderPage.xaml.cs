@@ -24,6 +24,8 @@ namespace PenStore.Windows
             InitializeComponent();
 
             LVPen.ItemsSource = DB.Order.ToList();
+            CBPen.ItemsSource = DB.Pen.ToList();
+            CBCLient.ItemsSource = DB.Client.ToList();
         }
 
         private void OrderDeleteBTN(object sender, RoutedEventArgs e)
@@ -48,6 +50,45 @@ namespace PenStore.Windows
                 catch
                 {
                     MessageBox.Show("Удалите связанные соединения");
+                }
+            }
+        }
+
+        private void OrderADDBTN(object sender, RoutedEventArgs e)
+        {
+            DB.Order FW = new DB.Order();
+            var ND = DB.Pen.FirstOrDefault(a => a.Color == TBA.Text.Trim());
+
+            if (ND != null)
+            {
+                MessageBox.Show("Ошибка с вводом данных/такое блюдо уже существует");
+            }
+            else
+            {
+                FW.DataOrder = CalenCB.DisplayDate;
+                FW.Amount = Convert.ToInt32(TBA.Text);
+
+                var IdDC = CBPen.SelectedItem;
+                var Id = ((DB.Pen)IdDC).Id_pen;
+                FW.Id_pen = Id;
+
+                var IdDCC = CBCLient.SelectedItem;
+                var IdC = ((Client)IdDCC).Id_client;
+                FW.Id_client = IdC;
+
+                DB.Order.Add(FW);
+                try
+                {
+                    DB.SaveChanges();
+                }
+                catch
+                {
+                    MessageBox.Show("Такие данные уже существует!");
+                }
+                finally
+                {
+                    MessageBox.Show("Сохранено");
+                    LVPen.ItemsSource = DB.Order.ToList();
                 }
             }
         }

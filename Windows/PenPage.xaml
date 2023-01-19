@@ -100,14 +100,14 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
 
-        <Button Grid.Column="8" Grid.Row="9" Grid.ColumnSpan="2" Content="Добавить" Margin="10" Click="PenAddBTN" />
+        <Button Grid.Column="8" Grid.Row="9" Grid.ColumnSpan="2" FontFamily="Verdana" FontWeight="Bold" Content="Добавить" Margin="10" Click="PenAddBTN" />
 
-        <Button Grid.Column="4" Grid.Row="9" Grid.ColumnSpan="2" Margin="10" Content="Удалить" Click="PenDeleteBTN"/>
+        <Button Grid.Column="4" Grid.Row="9" Grid.ColumnSpan="2" FontFamily="Verdana" FontWeight="Bold" Margin="10" Content="Удалить" Click="PenDeleteBTN"/>
 
         <Label Grid.Row="2" Grid.Column="1" Content="Поиск" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
 
         <TextBox Grid.Row="3" Grid.Column="1" Name="TBSourch" TextWrapping="Wrap" 
-                 TextChanged="TextBox_TextChanged"/>
+                 TextChanged="TextBox_TextChanged" Margin="5"/>
 
     </Grid>
 </Page>
