@@ -44,20 +44,20 @@
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <StackPanel Margin="10">
-                            <TextBlock FontFamily="Verdana" FontWeight="Bold" Text="Название:"/>
-                            <TextBlock Text="{Binding Color}"/>
+                            <TextBlock FontFamily="Verdana" FontWeight="Bold" Text="Дата заказа:"/>
+                            <TextBlock Text="{Binding DataOrder}"/>
                         </StackPanel>
                         <StackPanel Margin="10" >
-                            <TextBlock FontFamily="Verdana" FontWeight="Bold" Text="Тип ручки:"/>
-                            <TextBlock Text="{Binding TypePen.Name}"/>
+                            <TextBlock FontFamily="Verdana" FontWeight="Bold" Text="Количество товара:"/>
+                            <TextBlock Text="{Binding Amount}"/>
                         </StackPanel>
                         <StackPanel Margin="10">
-                            <TextBlock FontFamily="Verdana" FontWeight="Bold" Text="Производитель:"/>
-                            <TextBlock Text="{Binding Company.Name}"/>
+                            <TextBlock FontFamily="Verdana" FontWeight="Bold" Text="Номер ручки"/>
+                            <TextBlock Text="{Binding Id_pen}"/>
                         </StackPanel>
                         <StackPanel Margin="10">
-                            <TextBlock FontFamily="Verdana" FontWeight="Bold" Text="Цена:"/>
-                            <TextBlock Text="{Binding Price}"/>
+                            <TextBlock FontFamily="Verdana" FontWeight="Bold" Text="Имя клиента"/>
+                            <TextBlock Text="{Binding Client.Name}"/>
                         </StackPanel>
                     </StackPanel>
                 </DataTemplate>
@@ -66,5 +66,7 @@
 
         <Button Grid.Column="4" Grid.Row="9" Grid.ColumnSpan="2" Margin="10" Content="Удалить" Click="OrderDeleteBTN"/>
 
+        
+        
     </Grid>
 </Page>

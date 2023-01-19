@@ -10,6 +10,8 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using PenStore.DB;
+using PenStore.ViewsModel;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
@@ -56,7 +58,7 @@ namespace PenStore.Windows
         private void PenAddBTN(object sender, RoutedEventArgs e)
         {
             DB.Pen FW = new DB.Pen();
-            var ND = DB.Footwear.FirstOrDefault(a => a.Title == TBN.Text.Trim());
+            var ND = DB.Pen.FirstOrDefault(a => a.Color == TBC.Text.Trim());
 
             if (ND != null)
             {
@@ -64,16 +66,18 @@ namespace PenStore.Windows
             }
             else
             {
-                FW.Title = TBN.Text;
-                FW.Colour = TBC.Text;
-                FW.Size = TBS.Text;
-                FW.Price = Convert.ToInt32(TBCena.Text);
+                FW.Color = TBC.Text;
+                FW.Price = Convert.ToInt32(TBP.Text);
 
-                var IdDC = CBType.SelectedItem;
-                var Id = ((Types)IdDC).Id_type;
-                cln.Id_type = Id;
+                var IdDC = CBTypePen.SelectedItem;
+                var Id = ((TypePen)IdDC).Id_typePen;
+                FW.Id_typePen = Id;
 
-                DB.Footwear.Add(FW);
+                var IdDCC = CBCompany.SelectedItem;
+                var IdC = ((Company)IdDCC).Id_company;
+                FW.Id_company = IdC;
+
+                DB.Pen.Add(FW);
                 try
                 {
                     DB.SaveChanges();
@@ -85,14 +89,15 @@ namespace PenStore.Windows
                 finally
                 {
                     MessageBox.Show("Сохранено");
+                    LVPen.ItemsSource = DB.Pen.ToList();
                 }
             }
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var TBSQ = DB.Pen.OrderBy(a => a.Title).ToList();
-            TBSQ = TBSQ.Where(a => a.Price.ToLower().Contains(TBSourch.Text.ToLower())).ToList();
+            var TBSQ = DB.Pen.OrderBy(a => a.Color).ToList();
+            TBSQ = TBSQ.Where(a => a.Color.ToLower().Contains(TBSourch.Text.ToLower())).ToList();
             LVPen.ItemsSource = TBSQ;
         }
     }

@@ -4,11 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PenStore"
-        xmlns:vm1="clr-namespace:PenStore.ViewsModel"
+        xmlns:vm="clr-namespace:PenStore.ViewsModel"
         mc:Ignorable="d" MinHeight="450" MinWidth="800"
         Title="MainWindow" Height="500" Width="900">
     <Window.DataContext>
-        <vm1:MainViewPages/>
+        <vm:MainViewPages/>
     </Window.DataContext>
 
     <Grid>

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using PenStore.DB;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -15,9 +16,9 @@ using System.Windows.Shapes;
 
 namespace PenStore.Windows
 {
-    static public PenCompaniEntities DB = new PenCompaniEntities();
     public partial class ClientPage : Page
     {
+        static public PenCompaniEntities DB = new PenCompaniEntities();
         public ClientPage()
         {
             InitializeComponent();
@@ -47,6 +48,57 @@ namespace PenStore.Windows
                 catch
                 {
                     MessageBox.Show("Удалите связанные соединения");
+                }
+            }
+        }
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var TBSQ = DB.Client.OrderBy(a => a.Name).ToList();
+            TBSQ = TBSQ.Where(a => a.Name.ToLower().Contains(TBSourch.Text.ToLower())).ToList();
+            LVPen.ItemsSource = TBSQ;
+        }
+
+        private void RegBtn(object sender, RoutedEventArgs e)
+        {
+            Client cln = new Client();
+
+            var ND = DB.Client.FirstOrDefault(a => a.Name == TBL.Text.Trim());
+
+            if (ND != null)
+            {
+                MessageBox.Show("Ошибка с вводом данных/такое блюдо уже существует");
+            }
+            else
+            {
+
+                cln.Name = TBN.Text;
+                cln.Login = TBL.Text;
+                cln.Password = TBP.Text;
+
+                var IdDC = CBType.SelectedItem;
+                var Id = ((Types)IdDC).Id_type;
+                cln.Id_type = Id;
+
+
+                DB.Client.Add(cln);
+
+                try
+                {
+                    DB.SaveChanges();
+                }
+
+                catch
+                {
+                    MessageBox.Show("Такие данные уже существует!");
+                }
+
+                finally
+                {
+                    MessageBox.Show("Сохранено");
+                    LVPen.ItemsSource = DB.Client.ToList();
+                    //AuthWindow AW = new AuthWindow();
+                    //AW.Show();
+                    //this.Close();
                 }
             }
         }

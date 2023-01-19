@@ -74,7 +74,7 @@
 
         <Label Grid.Column="8" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Bottom">
             <Label.Content>
-                <TextBlock TextWrapping="Wrap" Text="Выберите компанию" ></TextBlock>
+                <TextBlock TextWrapping="Wrap" Text="Выберите тип ручки" ></TextBlock>
             </Label.Content>
         </Label>
 

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using PenStore.DB;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -16,9 +17,12 @@ namespace PenStore.Windows
 {
     public partial class RegWindow : Window
     {
+        static public PenCompaniEntities DB = new PenCompaniEntities();
         public RegWindow()
         {
             InitializeComponent();
+
+            CBType.ItemsSource = DB.Client.ToList();
         }
 
         private void RegBtn(object sender, RoutedEventArgs e)
