@@ -35,27 +35,13 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" 
+        <Label Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Visibility="Hidden"
                HorizontalAlignment="Center"  VerticalAlignment="Center" 
                Content="Логин" FontSize="20" FontFamily="Verdana" FontWeight="Bold" Margin="76,27,24,39" Grid.RowSpan="2"/>
 
-        <TextBox Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="3" Name="TBL" TextWrapping="Wrap"
-                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="14" Margin="26,19,64,31" Grid.RowSpan="2"/>
-
-        <Label Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" 
+        <Label Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" Visibility="Hidden"
                HorizontalAlignment="Center"  VerticalAlignment="Center" 
                Content="Пароль" FontSize="20" FontFamily="Verdana" FontWeight="Bold" Margin="68,27,17,39" Grid.RowSpan="2"/>
-
-        <TextBox Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="3" Name="TBP" TextWrapping="Wrap"
-                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="14" Margin="26,19,64,31" Grid.RowSpan="2"/>
-
-        <Button Grid.Row="4" Grid.Column="5" Grid.ColumnSpan="3" Margin="30,24,70,36"
-                Click="AuthBtn" Content="Авторизация" FontSize="16"
-                FontFamily="Verdana" FontWeight="Bold" Grid.RowSpan="2"/>
-
-        <Button Grid.Row="6" Grid.Column="5" Grid.ColumnSpan="3" Margin="30,24,70,36"
-                Content="Регистрация" FontSize="16" Click="RegPageBtn"
-                FontFamily="Verdana" FontWeight="Bold" Grid.RowSpan="2"/>
 
     </Grid>
 </Page>

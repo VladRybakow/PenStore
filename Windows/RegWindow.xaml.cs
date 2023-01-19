@@ -62,8 +62,8 @@ namespace PenStore.Windows
                 finally
                 {
                     MessageBox.Show("Сохранено");
-                    //AuthWindow AW = new AuthWindow();
-                    //AW.Show();
+                    AuthWindow AW = new AuthWindow();
+                    AW.Show();
                     this.Close();
                 }
             }

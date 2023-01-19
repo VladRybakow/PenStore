@@ -68,7 +68,7 @@
 
         <Label Grid.Column="7" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="Введите дату" Grid.ColumnSpan="2" Margin="45,0,0,0"/>
 
-        <Calendar Grid.Column="7" Grid.RowSpan="3" Grid.Row="3" Grid.ColumnSpan="2" x:Name="CalenCB" />
+        <Calendar Grid.Column="7" Grid.RowSpan="3" Grid.Row="3" Grid.ColumnSpan="2" x:Name="CalenCB" Margin="5,0,5,0" />
 
         <Label Grid.Column="9" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom">
             <Label.Content>

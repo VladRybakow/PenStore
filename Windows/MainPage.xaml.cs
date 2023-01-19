@@ -23,28 +23,5 @@ namespace PenStore.Windows
         {
             InitializeComponent();
         }
-
-        private void AuthBtn(object sender, RoutedEventArgs e)
-        {
-            foreach (var user in DB.Client)
-            {
-                if (TBL.Text == user.Login)
-                {
-                    if (TBP.Text == user.Password)
-                    {
-                        //PenWindow pw = new PenWindow();
-                        //pw.Show();
-                        //this.Close();
-                        MessageBox.Show($"Добро пожаловать, {user.Name}");
-                    }
-                }
-            }
-        }
-
-        private void RegPageBtn(object sender, RoutedEventArgs e)
-        {
-            RegWindow rw = new RegWindow();
-            rw.Show();
-        }
     }
 }
