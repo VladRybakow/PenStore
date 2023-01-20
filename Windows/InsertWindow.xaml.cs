@@ -46,7 +46,6 @@ namespace PenStore.Windows
             DB.SaveChanges();
             MessageBox.Show("Изменено");
             pp.LVPen.ItemsSource = DB.Pen.ToList();
-            this.Close();
         }
     }
 }
