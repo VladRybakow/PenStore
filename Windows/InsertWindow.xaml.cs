@@ -18,6 +18,7 @@ namespace PenStore.Windows
     public partial class InsertWindow : Window
     {
         static public PenCompaniEntities DB = new PenCompaniEntities();
+        PenPage pp = new PenPage(); 
         DB.Pen pn;
         public InsertWindow(DB.Pen pn)
         {
@@ -44,6 +45,8 @@ namespace PenStore.Windows
             pr.Id_typePen = Convert.ToInt32(TBTP.Text);
             DB.SaveChanges();
             MessageBox.Show("Изменено");
+            pp.LVPen.ItemsSource = DB.Pen.ToList();
+            this.Close();
         }
     }
 }

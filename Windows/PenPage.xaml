@@ -104,6 +104,8 @@
 
         <Button Grid.Column="4" Grid.Row="9" Grid.ColumnSpan="2" FontFamily="Verdana" FontWeight="Bold" Margin="10" Content="Удалить" Click="PenDeleteBTN"/>
 
+        <Button Grid.Column="3" Grid.Row="9" FontFamily="Verdana" FontWeight="Bold" Margin="5" Content="Обновить" Click="RefBtn"/>
+        
         <Label Grid.Row="2" Grid.Column="1" Content="Поиск" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
 
         <TextBox Grid.Row="3" Grid.Column="1" Name="TBSourch" TextWrapping="Wrap" 

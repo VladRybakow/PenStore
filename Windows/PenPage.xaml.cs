@@ -107,5 +107,11 @@ namespace PenStore.Windows
             InsertWindow DW = new InsertWindow(dis);
             DW.Show();
         }
+
+        private void RefBtn(object sender, RoutedEventArgs e)
+        {
+            DB.SaveChanges();
+            LVPen.ItemsSource = DB.Pen.ToList();
+        }
     }
 }
