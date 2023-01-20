@@ -100,5 +100,12 @@ namespace PenStore.Windows
             TBSQ = TBSQ.Where(a => a.Color.ToLower().Contains(TBSourch.Text.ToLower())).ToList();
             LVPen.ItemsSource = TBSQ;
         }
+
+        private void LVPen_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var dis = LVPen.SelectedItem as DB.Pen;
+            InsertWindow DW = new InsertWindow(dis);
+            DW.Show();
+        }
     }
 }
